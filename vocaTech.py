@@ -1,8 +1,9 @@
 import pyttsx3
 import datetime
 import speechRecognition as sr
-
- 
+import wikipedia
+import webbrowser
+import smtplib
 
 
 engine = pyttsx3.init('sapi5') # sapi5 api helps in synthesis and recognition of voice.
@@ -25,7 +26,7 @@ def wishMe():
         speak("Good Evening!")  
 
     speak("I am Jarvis Sir. Please tell me how may I help you")      
-    
+
 
 def takeCommand():
     #It takes microphone input from the user and returns string output
@@ -48,6 +49,15 @@ def takeCommand():
     
     return query
  
+
+def sendEmail(to, content):
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.ehlo()
+    server.starttls()
+    server.login('youremail@gmail.com', 'your-password')
+    server.sendmail('youremail@gmail.com', to, content)
+    server.close()
+
 
 if __name__ == "__main__":
     wishMe()
