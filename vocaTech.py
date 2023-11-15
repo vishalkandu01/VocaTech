@@ -1,6 +1,6 @@
 import pyttsx3
 import datetime
-import speechRecognition as sr
+import speech_recognition as sr
 import wikipedia
 import webbrowser
 import smtplib
@@ -8,7 +8,7 @@ import smtplib
 
 engine = pyttsx3.init('sapi5') # sapi5 api helps in synthesis and recognition of voice.
 voices= engine.getProperty('voices') #getting details of current voice
-engine.setProperty('voice', voice[0].id)
+engine.setProperty('voice', voices[0].id)
 
 def speak(audio):
     engine.say(audio) 
@@ -25,7 +25,7 @@ def wishMe():
     else:
         speak("Good Evening!")  
 
-    speak("I am Jarvis Sir. Please tell me how may I help you")      
+    speak("I am VocaTech Sir. Please tell me how may I help you")      
 
 
 def takeCommand():
