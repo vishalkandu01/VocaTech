@@ -44,4 +44,11 @@ if __name__ == "__main__":
     # if 1:
         query = takeCommand().lower() #Converting user query into lower case
 
-        
+        # Logic for executing tasks based on query
+        if 'wikipedia' in query:  #if wikipedia found in the query then this block will be executed
+            speak('Searching Wikipedia...')
+            query = query.replace("wikipedia", "")
+            results = wikipedia.summary(query, sentences=2) 
+            speak("According to Wikipedia")
+            print(results)
+            speak(results)
