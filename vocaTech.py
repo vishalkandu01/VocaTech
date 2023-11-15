@@ -38,7 +38,10 @@ def takeCommand():
     return query
  
 
-if __name__=="__main__" :
-    speak("Code With Vishal Kandu")
+if __name__ == "__main__":
+    wishMe()
+    while True:
+    # if 1:
+        query = takeCommand().lower() #Converting user query into lower case
 
- 
+        
